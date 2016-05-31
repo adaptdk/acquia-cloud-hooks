@@ -17,6 +17,6 @@
     "adaptdk/acquia-cloud-hooks": "1.0-dev"
   },
   "scripts": {
-    "post-update-cmd": "ln -s vendor/adaptdk/acquia-cloud-hooks hooks"
+    "post-update-cmd": "sh -c '[ -d hooks ] && rm -rf hooks'; cp -r vendor/adaptdk/acquia-cloud-hooks hooks"
   }
 }
