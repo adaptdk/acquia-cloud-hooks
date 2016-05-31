@@ -1,0 +1,22 @@
+{
+  "repositories": {
+    "acquia-cloud-hooks": {
+      "type": "package",
+      "package": {
+        "name": "adaptdk/acquia-cloud-hooks",
+        "version": "1.0-dev",
+        "source": {
+          "url": "https://github.com/adaptdk/acquia-cloud-hooks",
+          "type": "git",
+          "reference": "master"
+        }
+      }
+    }
+  },
+  "require": {
+    "adaptdk/acquia-cloud-hooks": "1.0-dev"
+  },
+  "scripts": {
+    "post-update-cmd": "ln -s vendor/adaptdk/acquia-cloud-hooks hooks"
+  }
+}
