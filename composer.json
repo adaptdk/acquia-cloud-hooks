@@ -1,7 +1,7 @@
 {
   "name": "adaptdk/acquia-cloud-hooks",
   "description": "Template for hooks for acquia cloud.",
-  "type": "project",
+  "type": "composer-plugin",
   "license": "GPL-2.0+",
   "minimum-stability": "dev",
   "prefer-stable": true,
@@ -20,7 +20,20 @@
     }
   },
   "require": {
+    "php": ">=5.4.5",
+    "composer-plugin-api": "^1.0.0",
     "adaptdk/acquia-cloud-hooks": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "AdaptCloudHooks\\": "src/"
+    }
+  },
+  "extra": {
+    "class": "AdaptCloudHooks\\Plugin",
+    "branch-alias": {
+      "dev-master": "1.0-dev"
+    }
   },
   "scripts": {
     "post-install-cmd": "sh -c '[ -d hooks ] && cp -r vendor/adaptdk/acquia-cloud-hooks hooks && rm -rf hooks/.git; echo \"Created new hooks dir from vendors folder.\"'",
