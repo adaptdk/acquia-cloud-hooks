@@ -42,7 +42,9 @@ class Plugin implements PluginInterface, EventSubscriberInterface {
       mkdir($top_dir);
       $dirs = scandir('vendor/adaptdk/acquia-cloud-hooks/hooks');
       foreach ($dirs as $dir) {
-        $this->recurse_copy('vendor/adaptdk/acquia-cloud-hooks/hooks/' . $dir, $top_dir . $dir);
+        if (( $dir != '.' ) && ( $dir != '..' )) {
+          $this->recurse_copy('vendor/adaptdk/acquia-cloud-hooks/hooks/' . $dir, $top_dir . $dir);
+        }
       }
     }
   }
