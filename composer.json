@@ -1,4 +1,10 @@
 {
+  "name": "adaptdk/acquia-cloud-hooks",
+  "description": "Template for hooks for acquia cloud.",
+  "type": "project",
+  "license": "GPL-2.0+",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "repositories": {
     "acquia-cloud-hooks": {
       "type": "package",
