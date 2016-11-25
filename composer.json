@@ -1,6 +1,6 @@
 {
   "name": "adaptdk/acquia-cloud-hooks",
-  "description": "Template for hooks for acquia cloud.",
+  "description": "Plugin for hooks for acquia cloud. This will contain newest general hooks and merge with existing hooks.",
   "type": "composer-plugin",
   "license": "GPL-2.0+",
   "minimum-stability": "dev",
@@ -21,8 +21,7 @@
   },
   "require": {
     "php": ">=5.4.5",
-    "composer-plugin-api": "^1.0.0",
-    "adaptdk/acquia-cloud-hooks": "dev-master"
+    "composer-plugin-api": "^1.0.0"
   },
   "autoload": {
     "psr-4": {

@@ -36,7 +36,8 @@ class Plugin implements PluginInterface, EventSubscriberInterface {
    * @param \Composer\Installer\PackageEvent $event
    */
   public function postPackage(PackageEvent $event) {
-    echo "Post update/install";
+    echo "Post update/install\n";
+    echo getcwd() . "\n";
   }
 
   /**
