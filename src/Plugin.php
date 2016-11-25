@@ -26,7 +26,6 @@ class Plugin implements PluginInterface, EventSubscriberInterface {
     return array(
       PackageEvents::POST_PACKAGE_INSTALL => 'postPackage',
       PackageEvents::POST_PACKAGE_UPDATE => 'postPackage',
-      PackageEvents::POST_PACKAGE_UNINSTALL => 'postPackageUninstall',
     );
   }
 
@@ -36,16 +35,11 @@ class Plugin implements PluginInterface, EventSubscriberInterface {
    * @param \Composer\Installer\PackageEvent $event
    */
   public function postPackage(PackageEvent $event) {
-    echo "Post update/install\n";
-    echo getcwd() . "\n";
-  }
+    echo "Running AdaptCloudHooks post install/update plugin.\n";
 
-  /**
-   * Post package uninstall event behaviour.
-   *
-   * @param \Composer\Installer\PackageEvent $event
-   */
-  public function postPackageUninstall(PackageEvent $event) {
-    echo "Post uninstall";
+    $dir = "hooks/";
+    if (file_prepare_directory($dir, FILE_CREATE_DIRECTORY)) {
+      var_dump(scandir('vendor/adaptdk/acquia-cloud-hooks/hooks'));
+    }
   }
 }
