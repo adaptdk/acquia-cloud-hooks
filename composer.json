@@ -20,8 +20,10 @@
     }
   },
   "require": {
-    "adaptdk/acquia-cloud-hooks": "dev-master#1.0-dev"
+    "adaptdk/acquia-cloud-hooks": "dev-master"
   },
   "scripts": {
-    "post-update-cmd": "sh -c '[ -d hooks ] && rm -rf hooks; cp -r vendor/adaptdk/acquia-cloud-hooks hooks && rm -rf hooks/.git; echo \"Created new hooks dir from vendors folder.\"'"}
+    "post-install-cmd": "sh -c '[ -d hooks ] && cp -r vendor/adaptdk/acquia-cloud-hooks hooks && rm -rf hooks/.git; echo \"Created new hooks dir from vendors folder.\"'",
+    "post-update-cmd": "sh -c '[ -d hooks ] && rm -rf hooks; cp -r vendor/adaptdk/acquia-cloud-hooks hooks && rm -rf hooks/.git; echo \"Created new hooks dir from vendors folder.\"'"
+  }
 }
