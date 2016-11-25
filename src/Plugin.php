@@ -38,7 +38,8 @@ class Plugin implements PluginInterface, EventSubscriberInterface {
     echo "Running AdaptCloudHooks post install/update plugin.\n";
 
     $dir = "hooks/";
-    if (file_prepare_directory($dir, FILE_CREATE_DIRECTORY)) {
+    if (!is_dir($dir)) {
+      mkdir($dir);
       var_dump(scandir('vendor/adaptdk/acquia-cloud-hooks/hooks'));
     }
   }
