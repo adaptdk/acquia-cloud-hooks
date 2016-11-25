@@ -37,10 +37,29 @@ class Plugin implements PluginInterface, EventSubscriberInterface {
   public function postPackage(PackageEvent $event) {
     echo "Running AdaptCloudHooks post install/update plugin.\n";
 
-    $dir = "hooks/";
-    if (!is_dir($dir)) {
-      mkdir($dir);
-      var_dump(scandir('vendor/adaptdk/acquia-cloud-hooks/hooks'));
+    $top_dir = "hooks/";
+    if (!is_dir($top_dir)) {
+      mkdir($top_dir);
+      $dirs = scandir('vendor/adaptdk/acquia-cloud-hooks/hooks');
+      foreach ($dirs as $dir) {
+        $this->recurse_copy($top_dir . $dir, $top_dir);
+      }
     }
+  }
+
+  private function recurse_copy($src, $dst) {
+    $dir = opendir($src);
+    @mkdir($dst);
+    while(false !== ( $file = readdir($dir)) ) {
+      if (( $file != '.' ) && ( $file != '..' )) {
+        if ( is_dir($src . '/' . $file) ) {
+          recurse_copy($src . '/' . $file, $dst . '/' . $file);
+        }
+        else {
+          copy($src . '/' . $file, $dst . '/' . $file);
+        }
+      }
+    }
+    closedir($dir);
   }
 }
