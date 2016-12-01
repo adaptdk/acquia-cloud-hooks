@@ -1,5 +1,0 @@
-# Ignore Composer-managed dependencies.
-vendor/
-
-# Ignore IDE specific stuff.
-/.idea
