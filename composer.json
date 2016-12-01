@@ -1,9 +1,0 @@
-{
-  "name": "adaptdk/acquia-cloud-hooks",
-  "description": "Hooks for Acquia cloud.",
-  "type": "acquia-hooks",
-  "license": "GPL-2.0+",
-  "require": {
-    "composer/installers": "~1.0"
-  }
-}
