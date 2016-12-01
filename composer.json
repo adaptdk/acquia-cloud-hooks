@@ -18,24 +18,5 @@
         }
       }
     }
-  },
-  "require": {
-    "php": ">=5.4.5",
-    "composer-plugin-api": "^1.0.0"
-  },
-  "autoload": {
-    "psr-4": {
-      "AdaptCloudHooks\\": "src/"
-    }
-  },
-  "extra": {
-    "class": "AdaptCloudHooks\\Plugin",
-    "branch-alias": {
-      "dev-master": "1.0-dev"
-    }
-  },
-  "scripts": {
-    "post-install-cmd": "sh -c '[ -d hooks ] && cp -r vendor/adaptdk/acquia-cloud-hooks hooks && rm -rf hooks/.git; echo \"Created new hooks dir from vendors folder.\"'",
-    "post-update-cmd": "sh -c '[ -d hooks ] && rm -rf hooks; cp -r vendor/adaptdk/acquia-cloud-hooks hooks && rm -rf hooks/.git; echo \"Created new hooks dir from vendors folder.\"'"
   }
 }
