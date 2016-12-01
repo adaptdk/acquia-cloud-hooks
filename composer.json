@@ -1,25 +1,9 @@
 {
   "name": "adaptdk/acquia-cloud-hooks",
-  "description": "Plugin for hooks for acquia cloud. This will contain newest general hooks and merge with existing hooks.",
-  "type": "project",
+  "description": "Hooks for Acquia cloud.",
+  "type": "acquia-hooks",
   "license": "GPL-2.0+",
-  "minimum-stability": "dev",
-  "prefer-stable": true,
   "require": {
     "composer/installers": "~1.0"
-  },
-  "repositories": {
-    "acquia-cloud-hooks": {
-      "type": "package",
-      "package": {
-        "name": "adaptdk/acquia-cloud-hooks",
-        "version": "1.0-dev",
-        "source": {
-          "url": "https://github.com/adaptdk/acquia-cloud-hooks",
-          "type": "git",
-          "reference": "master"
-        }
-      }
-    }
   }
 }
