@@ -7,7 +7,7 @@
   "prefer-stable": true,
   "repositories": {
     "acquia-cloud-hooks": {
-      "type": "package",
+      "type": "adapt-hooks",
       "package": {
         "name": "adaptdk/acquia-cloud-hooks",
         "version": "1.0-dev",
